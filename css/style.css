@@ -1,0 +1,746 @@
+@font-face {
+	font-family: "Raleway-Black";
+	src: url("fonts/raleway/Raleway-Black.ttf") format('truetype');
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+p {
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #565656;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.10s;
+}
+
+/*-------------------------------------*/
+/*             LOGIN FORM              */
+/*-------------------------------------*/
+.wrapper-login {
+    display: flex;
+    height: 100%;
+}
+.wrapper-img-login {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transition: all .40s;
+    z-index: -9;
+    overflow: hidden;
+}
+.img-login {
+    position: absolute;
+    height: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+}
+.overlay.login-img-screen {
+    opacity: .2;
+}
+
+.wrapper-login-form {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 880px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    transition: all .40s;
+    overflow-y: hidden;
+    background-color: rgba(255,255,255,.80);
+    box-shadow: 0 19px 38px 8px rgba(0,0,0,0.30), 0 15px 12px 8px rgba(0,0,0,0.22);
+}
+.container.form-login {
+    margin-top: 0px;
+}
+.wrapper-icon-login {
+    margin-bottom: 20px;
+}
+.img-icon-login {
+    height: 100px; width: 100px;
+}
+.form-inline .form-control.form-input-login {
+    height: 50px;
+    width: 250px;
+    font-size: 20px;
+}
+.form-group.mg-button {
+    margin-bottom: 15px;
+}
+.btn-login {
+    padding: 4px 40px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media (max-width: 1174px) {
+    .wrapper-img-login {
+        width: 100%;
+    }
+    .overlay.login-img-screen {
+        opacity: 0;
+    }
+    .wrapper-login-form {
+        width: 100%;
+        background-color: rgba(0,0,0, .50);
+    }
+    .img-icon-login {
+        height: 120px; width: 120px;
+    }
+    .img-login {
+        width: auto;
+        height: 100%
+    }
+}
+@media (max-width: 700px) {
+    .img-icon-login {
+        height: 100px; width: 100px;
+    }
+    .form-inline .form-control.form-input-login {
+        width: 77%;
+        height: auto;
+        font-size: 15px;
+    }
+    .btn-login {
+        width: auto;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+/*-------------------------------------*/
+/*              Dashboard              */
+/*-------------------------------------*/
+.container.index-dashboard {
+    margin-top: 90px;
+    padding: 0 20px;
+}
+
+.dashboard-content {
+    height: 120px;
+    margin: 10px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    border-radius: 5px;
+    padding: 15px;
+    position: relative;
+    color: white;
+}
+.dashboard-content:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.title-content, .keterangan  {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.keterangan {
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.title-dashboard-content p::after {
+    content: '';
+    height: 3px;
+    width: 200px;
+    background-color: gray;
+    position: absolute;
+    bottom: 20%;
+    left: 10px;
+}
+
+.icon-content {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 50px;
+}
+
+.content-dashboard-footer {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    padding: 0 25px 0 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.content-dashboard-footer.foo-1 {
+    background-color: #5a6065;
+}
+.content-dashboard-footer.foo-2 {
+    background-color: #1565C0;
+}
+.content-dashboard-footer.foo-3 {
+    background-color: #1e9239;
+}
+.content-dashboard-footer.foo-4 {
+    background-color: #ca2333;
+}
+
+.content-dashboard-footer p {
+    color: #dadada;
+    text-align: right;
+}
+.content-dashboard-footer:hover p {
+    color: white;
+    text-decoration: underline;
+}
+.content-dashboard-footer p::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    position: absolute;
+    right: 10px;
+    padding: 3px 0 0 0;
+    transition: all .10s;
+}
+.content-dashboard-footer:hover p::after {
+    right: 5px;
+}
+
+@media (min-width: 1060px) and (max-width: 1172px){
+    .dashboard-content {
+        height: 140px;
+    }
+}
+@media (max-width: 992px) {
+    .title-content, .keterangan {
+        text-align: center;
+        font-size: 15px;
+    }
+    .icon.icon-content {
+        display: none;
+    }
+}
+@media (max-width: 575px) {
+    .icon.icon-content {
+        display: block;
+    }
+    .title-content, .keterangan {
+        text-align: initial;
+    }
+    .keterangan {
+        font-size: 30px;
+    }
+
+}
+
+/*--------- STYLE ALL ---------s*/
+.bungkus-terluar {
+    display: flex;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.77);
+    z-index: -1;
+}
+
+/*--------------------*/
+/*      SIDEBAR       */
+/*--------------------*/
+#sidebar {
+    width: 280px;
+    position: fixed;
+    height: 100vh;
+    z-index: 150;
+    transition: all 0.40s cubic-bezier(0.64, 0.29, 0, 1);
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    overflow-y: auto;
+}
+
+#sidebar.active {
+    margin-left: -285px;
+}
+
+.dismiss {
+    display: none;
+}
+
+.dismiss svg {
+    color: whitesmoke;
+}
+
+.wrapper-img-sidebar {
+	z-index: -9;
+}
+
+.img-sidebar {
+    height: 100vh;
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -9;
+}
+
+.overlay.index-img-screen {
+    opacity: .8;
+}
+
+/* STYLE SIDEBAR HEADER PISAH */
+.sidebar-header, .sidebar-header-tamu, .sidebar-header-reservasi {
+    padding: 20px;
+}
+.sidebar-header, .sidebar-header-tamu {
+    background-color: rgba(0, 0, 0, 0.57);
+}
+.sidebar-header-reservasi {
+    background-color: rgba(0, 123, 255, 0.57);
+}
+/*-------------------------------------*/
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #4a4a4a;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: rgba(255, 255, 255, .4);
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+li ul li a svg {
+	margin-right: 10px;
+}
+
+.icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  width: 40px;
+  padding-left: 5px;
+}
+.dashboard-li-icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f3fd";
+}
+.tamu-li-icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0c0";
+}
+.reservasi-li-icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f073";
+}
+.tipeKamar-li-icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f015";
+}
+.transaksi-li-icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f07a";
+}
+
+.bungkus-bt-logout {
+    text-align: center;
+    margin-top: 70px;
+}
+.bt-logout {
+    color: white;
+}
+.bt-logout svg {
+    margin-left: 8px;
+}
+
+.personal-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    font-size: 21px;
+    background-color: #1a1d21;
+}
+.container.info {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content-personal-info div {
+    cursor: pointer;
+    margin: 0 5px;
+}
+.content-personal-info svg {
+    box-shadow: 0px 5px 15px rgba(0,0,0,.30);
+    transition: all .30s cubic-bezier(0.27, 0.13, 0, 1);
+}
+.content-personal-info .col:hover svg {
+    transform: scale(1.2);
+}
+
+.break-li {
+	border-bottom: thin solid rgba(255, 255, 255, 0.35);
+}
+
+.contact {
+	margin-top: 30px;
+}
+
+#btn-sidebar-toggle {
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .2s;
+}
+#btn-sidebar-toggle:hover {
+    color: #676767;
+}
+
+.title-header {
+    margin-bottom: 0px;
+    padding: 4px 0;
+    text-align: center;
+}
+
+/* INDIVUAL STYLE SIDEBAR - TAMU*/
+
+
+/*-------------------------------------*/
+/*           CONTENT HEADER            */
+/*-------------------------------------*/
+#content {
+    width: calc(100% - 280px);
+    min-height: 100vh;
+    transition: all 0.20s cubic-bezier(0.67, 0.16, 0, 1) ;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fffafa; 
+}
+
+#content.active {
+    width: 100%;
+}
+
+.navbar {
+    padding: 12.2px;
+    background-color: #f5f5f5 !important;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+
+.btn-header-logout {
+    display: none;
+    width: 110px;
+}
+
+.btn-header-logout svg {
+    margin-left: 8px;
+}
+
+.increase-width {
+    width: 100%;
+    text-align: center;
+}
+
+/* INDIVUAL STYLE CONTENT HEADER - DASHBOARD*/
+.h1-title-header-dashboard {
+    width: 70%;
+    transition: all 0.10s cubic-bezier(0.6, 0, 0, 0.99); 
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0px;
+    padding: 4px 0;
+}
+
+.hide-btn {
+	display: block;
+}
+
+.h1-title-header-tamu {
+    width: 70%;
+    transition: all 0.10s cubic-bezier(0.6, 0, 0, 0.99); 
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0px;
+    padding: 4px 0;
+}
+
+/* INDIVUAL STYLE CONTENT HEADER - RESERVASI*/
+.h1-title-header-reservasi {
+    width: 75%;
+    transition: all 0.10s cubic-bezier(0.6, 0, 0, 0.99); 
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0px;
+    padding: 4px 0;
+}
+
+/*--------------------*/
+/*   CONTENT TABLE    */
+/*--------------------*/
+.wrapper-table {
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	padding: 8px;
+	border-radius: 10px;
+	background-color: white;
+	margin-bottom: 20px;
+}
+
+.container.table-tamu {
+	margin-top: 100px;
+}
+
+.bungkus-bt-new {
+	margin-bottom: 10px;
+}
+
+.notice {
+	padding-bottom: 10px;
+	margin-bottom: 40px;
+}
+
+.footer {
+	padding: 8px;
+	background-color: #1a1d21;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.footer .y {
+	margin-right: 12px;
+}
+
+.footer .y::after {
+	content: '';
+    width: 1px;
+    height: 16px;
+    background-color: white;
+    position: absolute;
+    top: 12px;
+    margin: 0 5px;
+}
+
+.bt-input {
+    font-weight: bold;
+}
+
+.bt-input svg {
+    margin-right: 10px;
+}
+
+.btn-data-aksi {
+    padding: 0px 5px;
+}
+
+/* INDIVUAL STYLE CONTENT TABLE - RESERVASI*/
+.table .thead-blue th {
+    color: #fff;
+    background-color: #1565C0;
+    border-color: #1565C0;
+}
+
+
+
+/*--------------------*/
+/*     MODAL INSERT   */
+/*--------------------*/
+.modal-dialog {
+	border-radius: 0.3rem;
+}
+
+.modal-content {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.modal-title {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+
+.form-group-last-modal-input {
+	margin-bottom: 0;
+}
+
+.last-label {
+	margin-bottom: 0;
+}
+
+.text-muted {
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+	.modal-lg, .modal-xl {
+    	max-width: 600px;
+    }
+}
+
+/* INDIVUAL STYLE MODAL INSERT - TAMU*/
+.modal-form-tamu {
+	padding-left: 50px;
+}
+
+.foo-copyright {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	padding: 8px;
+	background-color: black;
+}
+
+/*--------------------*/
+/*     RESPONSIVE     */
+/*--------------------*/
+@media (max-width: 1059px) {
+    .overlay.index-img-screen {
+        display: none;
+    }
+    .wrapper-img-sidebar {
+        display: none;
+    }
+	.container.table-tamu {
+		margin-top: 75px;
+	}
+    .container.index-dashboard {
+        margin-top: 75px;
+        margin-bottom: 50px;
+    }
+    .wrapper-table {
+        margin-bottom: 50px;
+    }
+	.btn-header-logout {
+		display: none;
+	}
+	.h1-title-header-tamu, .h1-title-header-reservasi, .h1-title-header-dashboard {
+		font-size: 25px;
+		text-align: center;
+		width: 100%;
+	}
+	#sidebar .sidebar-header, #sidebar .sidebar-header-reservasi, #sidebar  .sidebar-header-tamu  {
+		padding: 12px;
+		text-align: center;
+	}
+	.title-header {
+		font-size: 25px;
+		margin-bottom: 0px;
+		padding: 4px 0;
+	}
+    #sidebar {
+        margin-left: -300px;
+        background-color: rgba(0,0,0,.88);
+        box-shadow: 0 5px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+    #sidebar.active {
+        margin-left: 0px;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: 100%;
+    }
+    #btn-sidebar-toggle {
+    	position: absolute;
+    	right: 20px;
+    	top: 23px;
+    }
+    .modal-form-tamu {
+    	padding-left: 16px;
+    }
+    .notice {
+    	display: none;
+    }
+    .bungkus-bt-new {
+        margin-bottom: 10px;
+    }
+}
+@media (max-height: 470px) {
+    .personal-info {
+        position: initial;
+    }
+}
+
+@media (max-width: 850px) {
+    .dismiss {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: white;
+        padding: 13px 5px 0 0;
+        font-size: 23px;
+    }
+    .form-tahun {
+        display: none;
+    }
+}
