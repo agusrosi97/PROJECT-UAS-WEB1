@@ -1,15 +1,10 @@
-<?php
-	require 'koneksi.php';
-	$data = $koneksi->prepare('SELECT * FROM tb_tamu');
-	$data->execute();
-	$hitung = $data->rowCount();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<!-- MENYESUAIKAN TAMPILAN WEB -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="logo/logo.png">
 	<title>Dashboard</title>
 	<!-- CSS BOOTSTRAP 4 -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -40,16 +35,16 @@
 	            	<a href="dashboard.php" class="icon dashboard-li-icon">Dashboard</a>
 	            </li>
 	            <li>
-	            	<a href="index_tamu.php" class="icon tamu-li-icon">Tamu</a>
+	            	<a href="data-tamu/index_tamu.php" class="icon tamu-li-icon">Tamu</a>
 	            </li>
 	            <li>
-	            	<a href="index_reservasi.php" class="icon reservasi-li-icon">Reservasi</a>
+	            	<a href="data-reservasi/index_reservasi.php" class="icon reservasi-li-icon">Reservasi</a>
 	            </li>
 	            <li>
-	            	<a href="#" class="icon tipeKamar-li-icon">Tipe Kamar</a>
+	            	<a href="data-kamar/index_kamar.php" class="icon tipeKamar-li-icon">Tipe Kamar</a>
 	            </li>
 	            <li class="break-li">
-	            	<a href="#" class="icon transaksi-li-icon">Transaksi Pembayaran</a>
+	            	<a href="data-transaksi/index_transaksi.php" class="icon transaksi-li-icon">Transaksi Pembayaran</a>
 	            </li>
 	            <div class="bungkus-bt-logout">
 	            	<button id="bt-logout" class="btn btn-outline-danger bt-logout" title="logout" onclick="btnLogout()">Logout<i class="fas fa-sign-out-alt"></i></button>
@@ -59,12 +54,12 @@
 		        <div class="container info">
 		        	<div class="row text-center col-xl-12 content-personal-info">
 		        		<div class="col" data-toggle="tooltip" data-placement="top" title="Gus Rosi Adi">
-		        			<a href="https://www.facebook.com" target="_blank">
+		        			<a href="https://web.facebook.com/agusrosi97" target="_blank">
 		        				<i class="fab fa-facebook-f"></i>
 		        			</a>
 		        		</div>
 		        		<div class="col" data-toggle="tooltip" data-placement="top" title="gusrosi_">
-		        			<a href="https://www.instagram.com" target="_blank">
+		        			<a href="https://www.instagram.com/gusrosi_" target="_blank">
 		        				<i class="fab fa-instagram"></i>
 		        			</a>
 		        		</div>
@@ -73,9 +68,9 @@
 		        				<i class="fab fa-whatsapp"></i>
 		        			</a>
 		        		</div>
-		        		<div class="col" data-toggle="tooltip" data-placement="top" title="rosiadi97">
-		        			<a href="#">
-		        				<i class="fab fa-line"></i>
+		        		<div class="col" data-toggle="tooltip" data-placement="top" title="agusrosi97">
+		        			<a href="https://github.com/agusrosi97" target="_blank">
+		        				<i class="fab fa-github"></i>
 		        			</a>
 		        		</div>
 		        	</div>
@@ -100,66 +95,116 @@
 	        			<p>Master Data & Transaksi</p>
 	        		</div>
 	        		<div class="col-sm-3">
+	        			<?php
+							require 'konek/koneksi.php';
+							$data_tamu = $koneksi->prepare('SELECT * FROM tb_tamu');
+							$data_tamu->execute();
+							$jumlah_data_tamu = $data_tamu->rowCount();
+						?>
 	        			<div class="dashboard-content bg-secondary">
 	        				<p class="title-content">Data Tamu</p>
-	        				<p class="keterangan">Total: <?php echo "$hitung"; ?></p>
+	        				<p class="keterangan">Total: <?php echo "$jumlah_data_tamu"; ?></p>
 	        				<div class="icon icon-content"><i class="fas fa-users"></i></div>
-	        				<a href="index_tamu.php" class="content-dashboard-footer foo-1">
-	        					<p>Lainnya</p>
+	        				<a href="data-tamu/index_tamu.php" class="content-dashboard-footer foo-1">
+	        					<p>Selengkapnya</p>
 	        				</a>
 	        			</div>
 	        		</div>
 	        		<div class="col-sm-3">
+	        			<?php
+							require 'konek/koneksi.php';
+							$data_reservasi = $koneksi->prepare('SELECT * FROM tb_reservasi');
+							$data_reservasi->execute();
+							$jumlah_data_reservasi = $data_reservasi->rowCount();
+						?>
 	        			<div class="dashboard-content bg-primary">
 	        				<p class="title-content">Data Reservasi</p>
-	        				<p class="keterangan">Total: <?php echo "$hitung"; ?></p>
+	        				<p class="keterangan">Total: <?php echo "$jumlah_data_reservasi"; ?></p>
 	        				<div class="icon icon-content"><i class="fas fa-calendar-alt"></i></div>
-	        				<a href="index_reservasi.php" class="content-dashboard-footer foo-2">
-	        					<p>Lainnya</p>
+	        				<a href="data-reservasi/index_reservasi.php" class="content-dashboard-footer foo-2">
+	        					<p>Selengkapnya</p>
 	        				</a>
 	        			</div>
 	        		</div>
 	        		<div class="col-sm-3">
+	        			<?php
+							require 'konek/koneksi.php';
+							$data_kamar = $koneksi->prepare('SELECT * FROM tb_tipe_kamar');
+							$data_kamar->execute();
+							$jumlah_data_kamar = $data_kamar->rowCount();
+						?>
 	        			<div class="dashboard-content bg-success">
 	        				<p class="title-content">Data Tipe Kamar</p>
-	        				<p class="keterangan">Total: <?php echo "$hitung"; ?></p>
+	        				<p class="keterangan">Total: <?php echo "$jumlah_data_kamar"; ?></p>
 	        				<div class="icon icon-content"><i class="fas fa-home"></i></div>
-	        				<a href="#" class="content-dashboard-footer foo-3">
-	        					<p>Lainnya</p>
+	        				<a href="data-kamar/index_kamar.php" class="content-dashboard-footer foo-3">
+	        					<p>Selengkapnya</p>
 	        				</a>
 	        			</div>
 	        		</div>
 	        		<div class="col-sm-3">
+	        			<?php
+							require 'konek/koneksi.php';
+							$data_transaksi = $koneksi->prepare('SELECT * FROM tb_transaksi');
+							$data_transaksi->execute();
+							$jumlah_data_transaksi = $data_transaksi->rowCount();
+						?>
 	        			<div class="dashboard-content bg-danger">
 	        				<p class="title-content">Transaksi Pembayaran</p>
-	        				<p class="keterangan">Total: <?php echo "$hitung"; ?></p>
+	        				<p class="keterangan">Total: <?php echo "$jumlah_data_transaksi"; ?></p>
 	        				<div class="icon icon-content"><i class="fas fa-shopping-cart"></i></div>
-	        				<a href="#" class="content-dashboard-footer foo-4">
-	        					<p>Lainnya</p>
+	        				<a href="data-transaksi/index_transaksi.php" class="content-dashboard-footer foo-4">
+	        					<p>Selengkapnya</p>
 	        				</a>
 	        			</div>
 	        		</div>
 	        	</div>
-	        	<div class="row">
+	        	<div class="row" id="laporan-master">
 	        		<div class="col-sm-12 title-dashboard-content">
 	        			<p>Laporan Master Data & Transaksi</p>
 	        		</div>
-	        		<div class="col-sm-3">
-	        			<div class="dashboard-content"></div>
+	        		<div class="col-sm-3" onclick="window.location='data-tamu/laporan_tamu.php'">
+	        			<div class="dashboard-content bg-secondary animasi-icon-tamu">
+	        				<p class="title-content font-weight-bolder keterangan">Laporan Tamu</p>
+	        				<div class="icon icon-content icon-buram">
+	        					<i class="fas fa-users"></i>
+	        				</div>
+	        				<a href="data-tamu/print_laporan_tamu.php" class="content-dashboard-footer-laporan foo-1">
+	        					<p>Print</p>
+	        				</a>
+	        			</div>
+	        		</div>
+	        		<div class="col-sm-3" onclick="window.location='data-reservasi/laporan_reservasi.php'">
+	        			<div class="dashboard-content bg-primary animasi-icon-reservasi">
+	        				<p class="title-content font-weight-bolder keterangan">Laporan Reservasi</p>
+	        				<div class="icon icon-content icon-buram"><i class="fas fa-calendar-alt"></i></div>
+	        				<a href="data-reservasi/index_reservasi.php" class="content-dashboard-footer-laporan foo-2">
+	        					<p>Print</p>
+	        				</a>
+	        			</div>
 	        		</div>
 	        		<div class="col-sm-3">
-	        			<div class="dashboard-content"></div>
+	        			<div class="dashboard-content bg-success animasi-icon-kamar">
+	        				<p class="title-content font-weight-bolder keterangan">Laporan Tipe Kamar</p>
+	        				<div class="icon icon-content icon-buram"><i class="fas fa-home"></i></div>
+	        				<a href="data-kamar/index_kamar.php" class="content-dashboard-footer-laporan foo-3">
+	        					<p>Print</p>
+	        				</a>
+	        			</div>
 	        		</div>
 	        		<div class="col-sm-3">
-	        			<div class="dashboard-content"></div>
-	        		</div>
-	        		<div class="col-sm-3">
-	        			<div class="dashboard-content"></div>
+	        			<div class="dashboard-content bg-danger animasi-icon-transaksi">
+	        				<p class="title-content font-weight-bolder keterangan">Laporan Transaksi Pembayaran</p>
+	        				<div class="icon icon-content icon-buram"><i class="fas fa-shopping-cart"></i></div>
+	        				<a href="data-transaksi/index_transaksi.php" class="content-dashboard-footer-laporan foo-4">
+	        					<p>Print</p>
+	        				</a>
+	        			</div>
 	        		</div>
 	        	</div>
 			</div>
 			<div class="footer">
-				<i class="far fa-copyright"></i><span class="y">&nbsp;2019</span><span>Agus Rosi Adi Purwibawa</span>
+				<i class="far fa-copyright"></i><span class="y">&nbsp;2019</span><span class="dev-name font-weight-bold"><a href="https://github.com/agusrosi97" target="_blank">Agus Rosi Adi Purwibawa - <i class="fab fa-github"></i></a></span>
 			</div>
 	    </div>
 	</div>
