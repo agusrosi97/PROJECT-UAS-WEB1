@@ -1,7 +1,4 @@
-@font-face {
-	font-family: "Raleway-Black";
-	src: url("fonts/raleway/Raleway-Black.ttf") format('truetype');
-}
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 html, body {
     height: 100%;
@@ -141,6 +138,7 @@ a, a:hover, a:focus {
     padding: 15px;
     position: relative;
     color: white;
+    cursor: pointer;
 }
 .dashboard-content:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -173,6 +171,14 @@ a, a:hover, a:focus {
     font-size: 50px;
 }
 
+.icon-buram {
+    opacity: .3
+}
+
+.font-weight-bolder {
+    font-size: 1.7vw;
+}
+
 .content-dashboard-footer {
     position: absolute;
     bottom: -5px;
@@ -183,24 +189,34 @@ a, a:hover, a:focus {
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
-.content-dashboard-footer.foo-1 {
+.content-dashboard-footer-laporan {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    padding: 0 35px 0 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.content-dashboard-footer.foo-1, .content-dashboard-footer-laporan.foo-1 {
     background-color: #5a6065;
 }
-.content-dashboard-footer.foo-2 {
+.content-dashboard-footer.foo-2, .content-dashboard-footer-laporan.foo-2 {
     background-color: #1565C0;
 }
-.content-dashboard-footer.foo-3 {
+.content-dashboard-footer.foo-3, .content-dashboard-footer-laporan.foo-3 {
     background-color: #1e9239;
 }
-.content-dashboard-footer.foo-4 {
+.content-dashboard-footer.foo-4, .content-dashboard-footer-laporan.foo-4 {
     background-color: #ca2333;
 }
 
-.content-dashboard-footer p {
+.content-dashboard-footer p, .content-dashboard-footer-laporan p {
     color: #dadada;
     text-align: right;
 }
-.content-dashboard-footer:hover p {
+.content-dashboard-footer:hover p, .content-dashboard-footer-laporan:hover p {
     color: white;
     text-decoration: underline;
 }
@@ -213,8 +229,28 @@ a, a:hover, a:focus {
     padding: 3px 0 0 0;
     transition: all .10s;
 }
-.content-dashboard-footer:hover p::after {
+.content-dashboard-footer-laporan p::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f02f";
+    position: absolute;
+    right: 10px;
+    padding: 3px 0 0 0;
+    transition: all .10s;
+}
+.dashboard-content:hover .content-dashboard-footer p::after {
     right: 5px;
+}
+.animasi-icon-tamu div svg, .animasi-icon-reservasi div svg, .animasi-icon-kamar div svg, .animasi-icon-transaksi div svg {
+    transition: all 0.50s;
+}
+.animasi-icon-tamu:hover div svg, .animasi-icon-reservasi:hover div svg, .animasi-icon-kamar:hover div svg, .animasi-icon-transaksi:hover div svg {
+    transform: scale(1.2);
+    transition: all 0.50s;
+}
+
+#laporan-master {
+    margin-top: 20px;
 }
 
 @media (min-width: 1060px) and (max-width: 1172px){
@@ -231,6 +267,11 @@ a, a:hover, a:focus {
         display: none;
     }
 }
+@media (max-width: 767px) {
+    .dashboard-content .content-dashboard-footer {
+        display: none;
+    }
+}
 @media (max-width: 575px) {
     .icon.icon-content {
         display: block;
@@ -239,9 +280,11 @@ a, a:hover, a:focus {
         text-align: initial;
     }
     .keterangan {
-        font-size: 30px;
+        font-size: 24px;
     }
-
+    .dashboard-content .content-dashboard-footer {
+        display: block;
+    }
 }
 
 /*--------- STYLE ALL ---------s*/
@@ -303,8 +346,7 @@ a, a:hover, a:focus {
     opacity: .8;
 }
 
-/* STYLE SIDEBAR HEADER PISAH */
-.sidebar-header, .sidebar-header-tamu, .sidebar-header-reservasi {
+.sidebar-header, .sidebar-header-tamu, .sidebar-header-reservasi, .sidebar-header-kamar, .sidebar-header-transaksi  {
     padding: 20px;
 }
 .sidebar-header, .sidebar-header-tamu {
@@ -312,6 +354,12 @@ a, a:hover, a:focus {
 }
 .sidebar-header-reservasi {
     background-color: rgba(0, 123, 255, 0.57);
+}
+.sidebar-header-kamar {
+    background-color: rgba(22, 183, 59, 0.54) !important;
+}
+.sidebar-header-transaksi {
+    background-color: rgba(220, 53, 69, 0.57);
 }
 /*-------------------------------------*/
 
@@ -343,14 +391,6 @@ a[aria-expanded="true"] {
 
 a[data-toggle="collapse"] {
     position: relative;
-}
-
-.dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
 }
 
 ul ul a {
@@ -396,6 +436,20 @@ li ul li a svg {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f07a";
+}
+
+.laporan-li-icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f15c";
+    padding-left: 8px;
+}
+.laporan-li-icon::after {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f35d';
+    right: 20px;
+    position: absolute;
 }
 
 .bungkus-bt-logout {
@@ -518,6 +572,7 @@ li ul li a svg {
 	display: block;
 }
 
+/* INDIVUAL STYLE CONTENT HEADER - TAMU*/
 .h1-title-header-tamu {
     width: 70%;
     transition: all 0.10s cubic-bezier(0.6, 0, 0, 0.99); 
@@ -528,7 +583,7 @@ li ul li a svg {
 }
 
 /* INDIVUAL STYLE CONTENT HEADER - RESERVASI*/
-.h1-title-header-reservasi {
+.h1-title-header-reservasi, .h1-title-header-kamar, .h1-title-header-transaksi {
     width: 75%;
     transition: all 0.10s cubic-bezier(0.6, 0, 0, 0.99); 
     font-family: 'Raleway', sans-serif;
@@ -548,7 +603,7 @@ li ul li a svg {
 	margin-bottom: 20px;
 }
 
-.container.table-tamu {
+.container.table-mg-top {
 	margin-top: 100px;
 }
 
@@ -570,6 +625,7 @@ li ul li a svg {
 	left: 0;
 	width: 100%;
 	text-align: center;
+    font-family: 'Raleway', sans-serif;
 }
 
 .footer .y {
@@ -584,6 +640,29 @@ li ul li a svg {
     position: absolute;
     top: 12px;
     margin: 0 5px;
+}
+
+.dev-name {
+    text-decoration: none !important;
+    background-color: white;
+    background-image: -webkit-linear-gradient(left, #ff1717 0%, #ffdd8c 50%, transparent 50%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    color: transparent;
+    -webkit-background-clip: text;
+    transition: .2s;
+}
+.dev-name:hover {
+    background-position: 0 0;
+    color: transparent;
+    transition: .2s;
+}
+.dev-name::after {
+    content: '';
+    height: 2px;
+    width: 20px;
+    background-color: white;
+    z-index: 99999;
 }
 
 .bt-input {
@@ -604,8 +683,18 @@ li ul li a svg {
     background-color: #1565C0;
     border-color: #1565C0;
 }
-
-
+/* INDIVUAL STYLE CONTENT TABLE - KAMAR*/
+.table .thead-green th {
+    color: #fff;
+    background-color: #39904d;
+    border-color: #39904d;
+}
+/* INDIVUAL STYLE CONTENT TABLE - TRANSAKSI*/
+.table .thead-red th {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
 
 /*--------------------*/
 /*     MODAL INSERT   */
@@ -644,10 +733,12 @@ li ul li a svg {
     }
 }
 
-/* INDIVUAL STYLE MODAL INSERT - TAMU*/
-.modal-form-tamu {
-	padding-left: 50px;
+.modal-form-costume {
+    padding-left: 50px;
 }
+
+/* INDIVUAL STYLE MODAL INSERT - TAMU*/
+
 
 .foo-copyright {
 	position: fixed;
@@ -668,7 +759,7 @@ li ul li a svg {
     .wrapper-img-sidebar {
         display: none;
     }
-	.container.table-tamu {
+	.container.table-mg-top {
 		margin-top: 75px;
 	}
     .container.index-dashboard {
@@ -681,12 +772,12 @@ li ul li a svg {
 	.btn-header-logout {
 		display: none;
 	}
-	.h1-title-header-tamu, .h1-title-header-reservasi, .h1-title-header-dashboard {
+	.h1-title-header-tamu, .h1-title-header-reservasi, .h1-title-header-dashboard, .h1-title-header-kamar, .h1-title-header-transaksi {
 		font-size: 25px;
 		text-align: center;
 		width: 100%;
 	}
-	#sidebar .sidebar-header, #sidebar .sidebar-header-reservasi, #sidebar  .sidebar-header-tamu  {
+	#sidebar .sidebar-header, #sidebar .sidebar-header-reservasi, #sidebar .sidebar-header-tamu, #sidebar .sidebar-header-kamar, #sidebar .sidebar-header-transaksi  {
 		padding: 12px;
 		text-align: center;
 	}
@@ -714,7 +805,7 @@ li ul li a svg {
     	right: 20px;
     	top: 23px;
     }
-    .modal-form-tamu {
+    .modal-form-costume {
     	padding-left: 16px;
     }
     .notice {
@@ -723,14 +814,6 @@ li ul li a svg {
     .bungkus-bt-new {
         margin-bottom: 10px;
     }
-}
-@media (max-height: 470px) {
-    .personal-info {
-        position: initial;
-    }
-}
-
-@media (max-width: 850px) {
     .dismiss {
         display: block;
         position: absolute;
@@ -740,7 +823,37 @@ li ul li a svg {
         padding: 13px 5px 0 0;
         font-size: 23px;
     }
+}
+@media (max-width: 450px) {
+    #sidebar.active {
+        width: 100%;
+    }
+    .icon::before {
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        width: 40px;
+        padding-left: 10px;
+    }
+}
+@media (max-height: 470px) {
+    .personal-info {
+        position: initial;
+    }
+}
+
+@media (max-width: 850px) {
+    .title-laporan {
+        font-size: 18px;
+    }
+}
+@media (max-width: 400px) {
     .form-tahun {
         display: none;
+    }
+    #laporan-master {
+        padding-top: 65px;
     }
 }
