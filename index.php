@@ -5,6 +5,7 @@
 	<title>Login</title>
 	<!-- MENYESUAIKAN TAMPILAN WEB -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="logo/logo.png">
 	<!-- CSS BOOTSTRAP 4 -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<!-- FONT AWESOME 5 -->
