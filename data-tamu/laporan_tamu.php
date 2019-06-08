@@ -48,7 +48,7 @@
 	            <li class="break-li">
 	            	<a href="../data-transaksi/index_transaksi.php" class="icon transaksi-li-icon">Transaksi Pembayaran</a>
 	            </li>
-	            <li class="active">
+	            <li>
 	            	<a href="../dashboard.php#laporan-master" class="icon laporan-li-icon"><strong>LAPORAN</strong></a>
 	            </li>
 	            <div class="bungkus-bt-logout">
@@ -59,12 +59,12 @@
 		        <div class="container info">
 		        	<div class="row text-center col-xl-12 content-personal-info">
 		        		<div class="col" data-toggle="tooltip" data-placement="top" title="Gus Rosi Adi">
-		        			<a href="https://www.facebook.com" target="_blank">
+		        			<a href="https://web.facebook.com/agusrosi97" target="_blank">
 		        				<i class="fab fa-facebook-f"></i>
 		        			</a>
 		        		</div>
 		        		<div class="col" data-toggle="tooltip" data-placement="top" title="gusrosi_">
-		        			<a href="https://www.instagram.com" target="_blank">
+		        			<a href="https://www.instagram.com/gusrosi_" target="_blank">
 		        				<i class="fab fa-instagram"></i>
 		        			</a>
 		        		</div>
@@ -73,9 +73,9 @@
 		        				<i class="fab fa-whatsapp"></i>
 		        			</a>
 		        		</div>
-		        		<div class="col" data-toggle="tooltip" data-placement="top" title="rosiadi97">
-		        			<a href="#">
-		        				<i class="fab fa-line"></i>
+		        		<div class="col" data-toggle="tooltip" data-placement="top" title="agusrosi97">
+		        			<a href="https://github.com/agusrosi97" target="_blank">
+		        				<i class="fab fa-github"></i>
 		        			</a>
 		        		</div>
 		        	</div>
@@ -136,7 +136,7 @@
 				<div class="notice">Note : <span class="text-danger"><b>Refresh the browser</b></span> if you resize it!</div>
 			</div>
 			<div class="footer">
-				<i class="far fa-copyright"></i><span class="y">&nbsp;2019</span><span>Agus Rosi Adi Purwibawa</span>
+				<i class="far fa-copyright"></i><span class="year"> 2019</span><span class="y"></span><span class="dev-name font-weight-bold"><a href="https://github.com/agusrosi97" target="_blank">Agus Rosi Adi Purwibawa - <i class="fab fa-github fork"></i></a></span>
 			</div>
 	    </div>
 	</div>

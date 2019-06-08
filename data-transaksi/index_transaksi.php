@@ -61,12 +61,12 @@
 		        <div class="container info">
 		        	<div class="row text-center col-xl-12 content-personal-info">
 		        		<div class="col" data-toggle="tooltip" data-placement="top" title="Gus Rosi Adi">
-		        			<a href="https://www.facebook.com" target="_blank">
+		        			<a href="https://web.facebook.com/agusrosi97" target="_blank">
 		        				<i class="fab fa-facebook-f"></i>
 		        			</a>
 		        		</div>
 		        		<div class="col" data-toggle="tooltip" data-placement="top" title="gusrosi_">
-		        			<a href="https://www.instagram.com" target="_blank">
+		        			<a href="https://www.instagram.com/gusrosi_" target="_blank">
 		        				<i class="fab fa-instagram"></i>
 		        			</a>
 		        		</div>
@@ -75,9 +75,9 @@
 		        				<i class="fab fa-whatsapp"></i>
 		        			</a>
 		        		</div>
-		        		<div class="col" data-toggle="tooltip" data-placement="top" title="rosiadi97">
-		        			<a href="#">
-		        				<i class="fab fa-line"></i>
+		        		<div class="col" data-toggle="tooltip" data-placement="top" title="agusrosi97">
+		        			<a href="https://github.com/agusrosi97" target="_blank">
+		        				<i class="fab fa-github"></i>
 		        			</a>
 		        		</div>
 		        	</div>
@@ -100,7 +100,7 @@
 					<div class="bungkus-bt-new">
 	        			<button class="btn btn-outline-danger bt-input" data-toggle="modal" data-target="#popUpInsert-Transaksi"><i class="fas fa-plus"></i>Data Transaksi</button>
 	        		</div>
-					<table id="tb-reservasi" class="table table-striped table-responsive" cellspacing="0" width="100%">
+					<table id="tb-reservasi" class="table table-striped" cellspacing="0" width="100%">
 				        <thead class="thead-red">
 				            <tr>
 				                <th>#</th>
@@ -148,9 +148,10 @@
 				        </tbody>
 				    </table>
 				</div>
+				<div class="notice">Note : <span class="text-danger"><b>Refresh the browser</b></span> if you resize it!</div>
 			</div>
 			<div class="footer">
-				<i class="far fa-copyright"></i><span class="y">&nbsp;2019</span><span>Agus Rosi Adi Purwibawa</span>
+				<i class="far fa-copyright"></i><span class="year"> 2019</span><span class="y"></span><span class="dev-name font-weight-bold"><a href="https://github.com/agusrosi97" target="_blank">Agus Rosi Adi Purwibawa - <i class="fab fa-github fork"></i></a></span>
 			</div>
 	    </div>
 	</div>
@@ -194,7 +195,7 @@
 		$(document).ready(function () {
 		    $('#btn-sidebar-toggle').on('click', function () {
                 $('#sidebar, #content').toggleClass('active');
-                $('.h1-title-header-reservasi').toggleClass('increase-width');
+                $('.h1-title-header-transaksi').toggleClass('increase-width');
                 $('.btn-header-logout').toggleClass('hide-btn');
             })
 		});
@@ -232,11 +233,11 @@
 		};
 		// SCREEN SIZE BROWSER TO ADD/REMOVE CLASS TABLE-RESPONSIVE
 		$(window).width(function() { 
-			if ($(window).width() < 700) {
-				$("#tb-reservasi").addClass('nowrap');
+			if ($(window).width() <= 1237) {
+				$("#tb-reservasi").addClass('table-responsive nowrap');
 			}
 			else {
-				$("#tb-reservasi").removeClass('nowrap');
+				$("#tb-reservasi").removeClass('table-responsive nowrap');
 			}
 		});
 	</script>

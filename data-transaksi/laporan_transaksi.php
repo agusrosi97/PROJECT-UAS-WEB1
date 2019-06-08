@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>DATA RESERVASI</title>
+	<title>DATA TRANSAKSI</title>
 	<!-- MENYESUAIKAN TAMPILAN WEB -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="../logo/logo.png">
@@ -12,12 +12,8 @@
 	<link rel="stylesheet" href="../fontawesome/css/all.css">
 	<!-- STYLE SWEETALERT 2 -->
 	<link rel="stylesheet" type="text/css" href="../sweetalert2/css/sweetalert2.css">
-	<!-- STYLE DATATABLES FOR BOOTSTRAP 4 -->
-	<link rel="stylesheet" type="text/css" href="../DataTables/DataTables-1.10.19/css/dataTables.bootstrap4.min.css">
 	<!-- STYLE CUSTOME-->
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<!-- STYLE ANIMATIONS -->
-	<link rel="stylesheet" type="text/css" href="../animations-css/animations.css">
 </head>
 <body>
 	<div class="bungkus-terluar">
@@ -27,7 +23,7 @@
 	    	<div class="wrapper-img-sidebar">
 	    		<img src="../images/IMG-20180918-WA0014.jpg" class="img-sidebar" alt="image-widuri">
 			</div>
-	        <div class="sidebar-header-reservasi">
+	        <div class="sidebar-header-transaksi">
 	            <h3 class="title-header">Welcome Staf</h3>
             	<div class="dismiss">
             		<button class="btn btn-outline-secondary"><i class="fas fa-angle-left"></i></button>
@@ -42,13 +38,13 @@
 	            	<a href="../data-tamu/index_tamu.php" class="icon tamu-li-icon">Tamu</a>
 	            </li>
 	            <li>
-	            	<a href="index_reservasi.php" class="icon reservasi-li-icon">Reservasi</a>
+	            	<a href="../data-reservasi/index_reservasi.php" class="icon reservasi-li-icon">Reservasi</a>
 	            </li>
 	            <li>
 	            	<a href="../data-kamar/index_kamar.php" class="icon tipeKamar-li-icon">Tipe Kamar</a>
 	            </li>
 	            <li class="break-li">
-	            	<a href="../data-transaksi/index_transaksi.php" class="icon transaksi-li-icon">Transaksi Pembayaran</a>
+	            	<a href="index_transaksi.php" class="icon transaksi-li-icon">Transaksi Pembayaran</a>
 	            </li>
 	            <li>
 	            	<a href="../dashboard.php#laporan-master" class="icon laporan-li-icon"><strong>LAPORAN</strong></a>
@@ -89,7 +85,7 @@
 	        <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	            <div class="container-fluid">
 	                <i id="btn-sidebar-toggle" class="fas fa-bars" title="Show/hide sidebar"></i>
-	                <h1 class="h1-title-header-reservasi">LAPORAN RESERVASI</h1>
+	                <h1 class="h1-title-header-transaksi">DATA TRANSAKSI</h1>
 	                <button class="btn btn-outline-danger btn-header-logout" title="Logout" onclick="btnLogout()">Logout<i class="fas fa-sign-out-alt"></i>
 	                </button>
 	            </div>
@@ -98,10 +94,10 @@
 	        <div class="container table-mg-top">
 				<div class="wrapper-table">
 					<div class="bungkus-bt-new">
-	        			<button class="btn btn-primary" onclick="window.open('print_laporan_reservasi.php')">PRINT</button>
+						<button class="btn btn-primary" onclick="window.open('print_laporan_transaksi.php')">PRINT</button>
 	        		</div>
-					<table id="tb-reservasi" class="table table-striped nowrap" cellspacing="0" width="100%">
-				        <thead class="thead-blue">
+					<table id="tb-reservasi" class="table table-striped" cellspacing="0" width="100%">
+				        <thead class="thead-red">
 				            <tr>
 				                <th>#</th>
 				                <th>ID</th>
@@ -111,24 +107,26 @@
 				                <th>Tipe Kamar</th>
 				                <th>Dewasa</th>
 				                <th>Anak-anak</th>
+				                <th>Jumlah Pembayaran</th>
 				            </tr>
 				        </thead>
 				        <tbody>
 				            <?php
 					            require '../konek/koneksi.php';
-								$sql = "SELECT * FROM tb_reservasi ORDER BY id_reservasi DESC";
+								$sql = "SELECT * FROM tb_transaksi ORDER BY id_transaksi DESC";
 								$no=1;
 								foreach ($koneksi->query($sql) as $row) {
 									?>
 									<tr>
 										<td><?php echo $no; ?></td>
-										<td>RSV-00<?php echo $row['id_reservasi']; ?></td>
-										<td><?php echo $row['nm_tamu']; ?></td>
-							    		<td><?php echo $row['checkin']; ?></td>
-							    		<td><?php echo $row['checkout']; ?></td>
-							    		<td><?php echo $row['tipe_kmr']; ?></td>
+										<td class="text-nowrap">TR-00<?php echo $row['id_transaksi']; ?></td>
+										<td><?php echo $row['nama_tamu']; ?></td>
+							    		<td class="text-nowrap"><?php echo $row['checkin']; ?></td>
+							    		<td class="text-nowrap"><?php echo $row['checkout']; ?></td>
+							    		<td><?php echo $row['tipe_kamar']; ?></td>
 							    		<td><?php echo $row['jml_dewasa']; ?></td>
 							    		<td><?php echo $row['jml_anak']; ?></td>
+							    		<td>Rp. <?php echo $row['total_pembayaran']; ?></td>
 							    	</tr>
 					    			<?php
 					    		$no++;
@@ -140,7 +138,7 @@
 				<div class="notice">Note : <span class="text-danger"><b>Refresh the browser</b></span> if you resize it!</div>
 			</div>
 			<div class="footer">
-				<i class="far fa-copyright"></i><span class="y">&nbsp;2019</span><span>Agus Rosi Adi Purwibawa</span>
+				<i class="far fa-copyright"></i><span class="year"> 2019</span><span class="y"></span><span class="dev-name font-weight-bold"><a href="https://github.com/agusrosi97" target="_blank">Agus Rosi Adi Purwibawa - <i class="fab fa-github fork"></i></a></span>
 			</div>
 	    </div>
 	</div>
@@ -161,7 +159,7 @@
 		$(document).ready(function () {
 		    $('#btn-sidebar-toggle').on('click', function () {
                 $('#sidebar, #content').toggleClass('active');
-                $('.h1-title-header-reservasi').toggleClass('increase-width');
+                $('.h1-title-header-transaksi').toggleClass('increase-width');
                 $('.btn-header-logout').toggleClass('hide-btn');
             })
 		});
@@ -180,8 +178,9 @@
 				title: "Anda yakin ingin keluar dari sistem?",
 				type: "question",
 				confirmButtonColor: "#d33",
-				cancelButtonColor: "#aaa",
+				cancelButtonColor: "#007bff",
 				confirmButtonText: "IYA ! <i class='fas fa-sign-out-alt'></i>",
+				cancelButtonText: "BATAL",
 				showCancelButton: true
 			}).then((result) => {
 				if (result.value) {
@@ -198,11 +197,11 @@
 		};
 		// SCREEN SIZE BROWSER TO ADD/REMOVE CLASS TABLE-RESPONSIVE
 		$(window).width(function() { 
-			if ($(window).width() <= 767) {
-				$("#tb-reservasi").addClass('table-responsive text-nowrap');
+			if ($(window).width() <= 1237) {
+				$("#tb-reservasi").addClass('table-responsive nowrap');
 			}
 			else {
-				$("#tb-reservasi").removeClass('table-responsive text-nowrap');
+				$("#tb-reservasi").removeClass('table-responsive nowrap');
 			}
 		});
 	</script>

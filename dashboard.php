@@ -94,7 +94,7 @@
 	        		<div class="col-sm-12 title-dashboard-content">
 	        			<p>Master Data & Transaksi</p>
 	        		</div>
-	        		<div class="col-sm-3">
+	        		<div class="col-sm-3" onclick="window.location='data-tamu/index_tamu.php'">
 	        			<?php
 							require 'konek/koneksi.php';
 							$data_tamu = $koneksi->prepare('SELECT * FROM tb_tamu');
@@ -110,7 +110,7 @@
 	        				</a>
 	        			</div>
 	        		</div>
-	        		<div class="col-sm-3">
+	        		<div class="col-sm-3" onclick="window.location='data-reservasi/index_reservasi.php'">
 	        			<?php
 							require 'konek/koneksi.php';
 							$data_reservasi = $koneksi->prepare('SELECT * FROM tb_reservasi');
@@ -126,7 +126,7 @@
 	        				</a>
 	        			</div>
 	        		</div>
-	        		<div class="col-sm-3">
+	        		<div class="col-sm-3" onclick="window.location='data-kamar/index_kamar.php'">
 	        			<?php
 							require 'konek/koneksi.php';
 							$data_kamar = $koneksi->prepare('SELECT * FROM tb_tipe_kamar');
@@ -142,7 +142,7 @@
 	        				</a>
 	        			</div>
 	        		</div>
-	        		<div class="col-sm-3">
+	        		<div class="col-sm-3" onclick="window.location='data-transaksi/index_transaksi.php'">
 	        			<?php
 							require 'konek/koneksi.php';
 							$data_transaksi = $koneksi->prepare('SELECT * FROM tb_transaksi');
@@ -183,20 +183,20 @@
 	        				</a>
 	        			</div>
 	        		</div>
-	        		<div class="col-sm-3">
+	        		<div class="col-sm-3" onclick="window.location='data-kamar/laporan_kamar.php'">
 	        			<div class="dashboard-content bg-success animasi-icon-kamar">
 	        				<p class="title-content font-weight-bolder keterangan">Laporan Tipe Kamar</p>
 	        				<div class="icon icon-content icon-buram"><i class="fas fa-home"></i></div>
-	        				<a href="data-kamar/index_kamar.php" class="content-dashboard-footer-laporan foo-3">
+	        				<a href="data-kamar/print_laporan_kamar.php" class="content-dashboard-footer-laporan foo-3">
 	        					<p>Print</p>
 	        				</a>
 	        			</div>
 	        		</div>
-	        		<div class="col-sm-3">
+	        		<div class="col-sm-3" onclick="window.location='data-transaksi/laporan_transaksi.php'">
 	        			<div class="dashboard-content bg-danger animasi-icon-transaksi">
 	        				<p class="title-content font-weight-bolder keterangan">Laporan Transaksi Pembayaran</p>
 	        				<div class="icon icon-content icon-buram"><i class="fas fa-shopping-cart"></i></div>
-	        				<a href="data-transaksi/index_transaksi.php" class="content-dashboard-footer-laporan foo-4">
+	        				<a href="data-transaksi/print_laporan_transaksi.php" class="content-dashboard-footer-laporan foo-4">
 	        					<p>Print</p>
 	        				</a>
 	        			</div>
@@ -204,7 +204,7 @@
 	        	</div>
 			</div>
 			<div class="footer">
-				<i class="far fa-copyright"></i><span class="y">&nbsp;2019</span><span class="dev-name font-weight-bold"><a href="https://github.com/agusrosi97" target="_blank">Agus Rosi Adi Purwibawa - <i class="fab fa-github"></i></a></span>
+				<i class="far fa-copyright"></i><span class="year"> 2019</span><span class="y"></span><span class="dev-name font-weight-bold"><a href="https://github.com/agusrosi97" target="_blank">Agus Rosi Adi Purwibawa - <i class="fab fa-github fork"></i></a></span>
 			</div>
 	    </div>
 	</div>
