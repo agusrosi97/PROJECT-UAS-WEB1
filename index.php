@@ -25,7 +25,8 @@
 			<div class="container form-login">
 				<form action="" method="POST">
 					<div class="wrapper-icon-login text-center">
-						<img src="images/16101365 - Agus Rosi Adi Purwibawa 3 - circle.png" class="img-icon-login">
+						<img src="images/wedding-flourish-clipart-black.png" class="img-icon-login logo-black">
+						<img src="images/wedding-flourish-clipart-1.png" class="img-icon-login logo-white">
 					</div>
 					<div class="form-inline justify-content-center">
 						<div class="form-group mg-button">
@@ -61,7 +62,6 @@
 	<script type="text/javascript" src="sweetalert2/js/sweetalert2.js"></script>
 	<!-- JS LIBRARY FONT AWESOME 5 -->
 	<script type="text/javascript" src="fontawesome/js/all.js"></script>
-
 	<?php
 	$users = "admin";
 	$pass = "admin";
@@ -72,7 +72,7 @@
 					type: 'success',
 					showConfirmButton: false,
 					timer: 3000,
-					title: 'Welcome'
+					title: 'Halo!'
 	 			}).then(function(){
 					window.location.href = 'dashboard.php'
 	 			});

@@ -45,7 +45,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="submit" name="submit-input-tamu" class="btn btn-primary">Simpan Data</button>
-				<button type="reset" class="btn btn-danger">Ulang</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 			</div>
 				</form>
 		</div>

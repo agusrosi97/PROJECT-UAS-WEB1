@@ -213,12 +213,13 @@
 				type: "question",
 				confirmButtonColor: "#d33",
 				cancelButtonColor: "#aaa",
-				confirmButtonText: "IYA ! <i class='fas fa-sign-out-alt'></i>",
+				cancelButtonText: "Tidak",
+				confirmButtonText: "Iya",
 				showCancelButton: true
 			}).then((result) => {
 				if (result.value) {
 				    Swal.fire({
-				    	title: "Goodbye, see you later!",
+				    	title: "Terimakasih",
 				    	type: "success",
 				    	showConfirmButton: false,
 				    	timer: 2000

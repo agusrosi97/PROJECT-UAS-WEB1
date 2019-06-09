@@ -68,9 +68,11 @@ a, a:hover, a:focus {
 }
 .wrapper-icon-login {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 .img-icon-login {
-    height: 100px; width: 100px;
+    height: 100px; width: 150px;
 }
 .form-inline .form-control.form-input-login {
     height: 50px;
@@ -86,6 +88,10 @@ a, a:hover, a:focus {
     font-weight: bold;
 }
 
+.logo-white {
+    display: none;
+}
+
 @media (max-width: 1174px) {
     .wrapper-img-login {
         width: 100%;
@@ -98,16 +104,22 @@ a, a:hover, a:focus {
         background-color: rgba(0,0,0, .50);
     }
     .img-icon-login {
-        height: 120px; width: 120px;
+        height: 120px; width: 170px;
     }
     .img-login {
         width: auto;
         height: 100%
     }
+    .logo-black {
+        display: none;
+    }
+    .logo-white {
+        display: block;
+    }
 }
 @media (max-width: 700px) {
     .img-icon-login {
-        height: 100px; width: 100px;
+        height: 100px; width: 150px;
     }
     .form-inline .form-control.form-input-login {
         width: 77%;
@@ -626,6 +638,7 @@ li ul li a svg {
 	width: 100%;
 	text-align: center;
     font-family: 'Raleway', sans-serif;
+    z-index: 98;
 }
 
 .footer .y {
@@ -643,26 +656,30 @@ li ul li a svg {
 }
 
 .dev-name {
-    text-decoration: none !important;
-    background-color: white;
-    background-image: -webkit-linear-gradient(left, #ff1717 0%, #ffdd8c 50%, transparent 50%);
-    background-position: 100% 0;
-    background-size: 200% 200%;
-    color: transparent;
-    -webkit-background-clip: text;
-    transition: .2s;
+    color: white;
 }
 .dev-name:hover {
-    background-position: 0 0;
-    color: transparent;
-    transition: .2s;
+    color: whitesmoke;
 }
-.dev-name::after {
-    content: '';
-    height: 2px;
-    width: 20px;
-    background-color: white;
-    z-index: 99999;
+@media(-webkit-min-device-pixel-ratio:0) {
+    .dev-name {
+        text-decoration: none !important;
+        background-color: white;
+        background-image: -webkit-linear-gradient(left, #ff1717 -10%, #ffdd8c 50%, transparent 50%);
+        background-position: 100% 0;
+        background-size: 200% 200%;
+        color: transparent;
+        -webkit-background-clip: text;
+        transition: .2s;
+    }
+    .dev-name:hover {
+        background-position: 0 0;
+        color: transparent;
+        transition: .2s;
+    }
+}
+.fork {
+    color: white !important;
 }
 
 .bt-input {
@@ -851,6 +868,9 @@ li ul li a svg {
 }
 @media (max-width: 400px) {
     .form-tahun {
+        display: none;
+    }
+    .year {
         display: none;
     }
     #laporan-master {
