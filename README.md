@@ -7,7 +7,7 @@
 * Table costume with [**DataTables Bootstrap 4**](https://datatables.net/examples/styling/bootstrap4)
 * Style with [**Bootstrap 4**](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 * Icons support by [**Font Awesome 5**](https://fontawesome.com/)
-* Not include <b>database</b>, please contact [agusrosiadi.p@gmail.com](https://gmail.com) for more information
+* Not include <b>database</b>, please contact [agusrosiadi.p@gmail.com](https://gmail.com) for more informations
 
 ### Mohon maaf jika ada kesalahan, masukan / saran sangat membentu.
 #
